@@ -16,6 +16,8 @@ $pages = array(
 	'/' => array('file' => 'main', 'name' => 'Főoldal', 'menu' => array(1,1,1)),
 	'education' => array('file' => 'education', 'name' => 'Képzések', 'menu' => array(1,1,1)),
 	'iksz' => array('file' => 'iksz', 'name' => 'IKSZ', 'menu' => array(1,1,1)),
+	'pictures' => array('file' => 'pictures', 'name' => 'Galéria', 'menu' => array(1,1,1)),
+	'upload' => array('file' => 'upload', 'name' => 'Képek feltöltése', 'menu' => array(0,0,1)),
 	'contact' => array('file' => 'contact', 'name' => 'Kapcsolat', 'menu' => array(1,1,1)),
 	'messages' => array('file' => 'messages', 'name' => 'Üzenetek', 'menu' => array(0,0,1)),
     'login' => array('file' => 'login', 'name' => 'Belépés', 'menu' => array(1,0,0)),
@@ -38,4 +40,12 @@ $error_page = array ('file' => '404', 'name' => 'A keresett oldal nem találhat�
     'belep' => array('file' => 'belep', 'name' => '', 'menu' => array(0,0)),
     'regisztral' => array('file' => 'regisztral', 'name' => '', 'menu' => array(0,0))
 */
+
+//Képek
+date_default_timezone_set('Europe/Brussels');
+    $FOLDER = './gallery/';
+    $TYPES = array ('.jpg', '.png');
+    $MEDIATYPES = array('image/jpeg', 'image/png');
+    $DATEFORM = "Y.m.d. H:i";
+    $MAXSIZE = 500*1024;
 ?>

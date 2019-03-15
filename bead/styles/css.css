@@ -1,0 +1,44 @@
+body {	
+      	font-family: sans-serif;
+	padding: 10px;
+	background-color: #EDEDED;
+}
+p{
+	font: 18px Arial, sans-serif;
+
+}
+.header{
+	background-color: #7CA2A9;
+}
+.header img{
+	background-color: #DDEDF7;
+}
+.content{
+	background-color: #E1E1E1;
+}
+.right{
+	padding-left: 10px;
+	border-left: 2px solid grey;
+}
+.rss li{
+	margin-top: 5px;
+	border-bottom: 1px solid blue;
+}
+footer{
+	background-color: #7CA2A9;
+	padding: 10px;
+}
+iframe, video{
+	max-width: 100%;
+}
+form{
+	2px solid black;
+}
+.container{
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 2px solid black;
+}
+.message:hover{
+	background-color: #B2CFE0;
+}

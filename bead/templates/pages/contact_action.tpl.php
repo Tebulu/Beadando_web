@@ -1,4 +1,4 @@
-<!-- Regisztráció -->
+<!-- Kapcsolat felvétel -->
 
 	<?php if(isset($message)) { ?>
 		

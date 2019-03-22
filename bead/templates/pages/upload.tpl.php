@@ -25,7 +25,6 @@
             }
         }        
     }
-    // Megjelenítés logika:
 ?>
     <h1>Feltöltés a galériába:</h1>
 <?php
@@ -40,7 +39,7 @@
     <form  class="form-horizontal" action="?page=upload" method="post"
                 enctype="multipart/form-data">
         
-            Select files: <input type="file" name="file"><br><br>
+            Select file: <input type="file" name="file"><br><br>
 			<div class="form-group">        
 				<div class="col-sm-offset-2 col-sm-10">
 			<button type="submit" class="btn btn-default" name="send">Submit</button>

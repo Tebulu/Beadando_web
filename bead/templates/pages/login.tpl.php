@@ -32,7 +32,7 @@
     <h3>Regisztrálja magát, ha még nem felhasználó!</h3>
 	<div class="container">
 	<h2>Regisztráció</h2>
-	<form class="form-horizontal" action = "?page=signup" method = "post">
+	<form class="form-horizontal" action = "?page=signup_action" method = "post">
 		<div class="form-group">
 			<label class="control-label col-sm-2" for="first_name">Vezeték név:</label>
 			<div class="col-sm-10">

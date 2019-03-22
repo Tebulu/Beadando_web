@@ -19,9 +19,9 @@
 	if(!$again){
 		try {
 			// Kapcsolódás
-			$user = 'root';
-			$password = 'usbw';
-			$dbh = new PDO('mysql:dbname=atlatszonet; host=localhost:3307', $user, $password,
+			$user = 'atlatszonet';
+			$password = 'RJUJBHn5';
+			$dbh = new PDO('mysql:dbname=atlatszonet; host=mysql.omega:3306', $user, $password,
 							array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
 			$dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
 			$sqlInsert = "insert into messages(name,email,message)
@@ -29,7 +29,7 @@
 				$stmt = $dbh->prepare($sqlInsert); 
 				$stmt->execute(array(':name' => $_POST['name'],':email' => $_POST['email'],':message' => $_POST['message'])); 
 				if($count = $stmt->rowCount()) {
-					$message = "Az üzenetet sikeresen elküldtük.";                     
+					$message = "Az üzenetet sikeresen elküldtük. Kérjük szíves türelmét, míg a munkatársaink válaszolnak!";                     
 					$again = false;
 				}
 		}
@@ -38,13 +38,5 @@
 			$again = true;
 		}
 	}
-		
-	
-
-	
-	
-
-	
-
 ?>
 

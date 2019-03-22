@@ -7,8 +7,8 @@
 		<title><?= $main_title['title'] . ( (isset($main_title['describe'])) ? ('|' . $main_title['describe']) : '' ) ?></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<script  type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script  type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 		<script type="text/javascript">
 			$(function() {
 				$("#tfq2b").click(function() {
@@ -26,9 +26,8 @@
 	<body>
 		<!--Fejléc-->
 		<header class="header">
-			<img class="img-responsive" src="./images/<?=$header['image_source']?>" alt="<?=$header['image_alt']?>">
-			<?php if (isset($header['describe'])) { ?><h2><?= $header['describe'] ?></h2><?php } ?>
-			<?php if(isset($_SESSION['user_name'])) { ?>Bejlentkezve: <strong><?= $_SESSION['first_name']." ".$_SESSION['last_name']." (".$_SESSION['user_name'].")" ?></strong><?php } ?>
+			<img class="img-responsive" src="./images/<?=$header['image_source']?>" alt="<?=$header['image_alt']?>"/>
+			<?php if(isset($_SESSION['user_name'])) { ?>Bejlentkezve: <strong><?php= $_SESSION['first_name']." ".$_SESSION['last_name']." (".$_SESSION['user_name'].")" ?></strong><?php } ?>
 		</header>
 		
 		<!--Menü-->
@@ -45,7 +44,7 @@
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav">
 						<?php foreach ($pages as $url => $page) { ?>
-									<?php if(! isset($_SESSION['user_name']) && $page['menu'][0] || isset($_SESSION['user_name']) && $page['menu'][1] || isset($_SESSION['admin'])==1 && $page['menu'][2]) { ?>
+									<?php if(! isset($_SESSION['user_name']) && $page['menu'][0] || isset($_SESSION['user_name']) && !isset($_SESSION['admin']) && $page['menu'][1] || isset($_SESSION['admin']) && $page['menu'][2]){ ?>
 										<li<?= (($page == $find) ? ' class="active"' : '') ?>>
 										<a href="<?= ($url == '/') ? '.' : ('?page=' . $url) ?>">
 										<?= $page['name'] ?></a>
@@ -66,11 +65,11 @@
 				</div>
 			</div>
 		</nav>
-
+		<!--Tartalom-->
 		<div class="content">
-				<?php include("./templates/pages/{$find['file']}.tpl.php"); ?>
-			</div>
+			<?php include("./templates/pages/{$find['file']}.tpl.php"); ?>
 		</div>
+		
 		<!--Lábléc-->
 		<footer class="text-center">
 			 <p>Ez a honlap iskolai projektfeladat céljára készült!</p>

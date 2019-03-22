@@ -1,4 +1,4 @@
-<!--Nincs kész! Bejelentkezés, fő oldalra léptetés!!!!!!-->
+<!--Bejelentkezés, fő oldalra léptetés!!!!!!-->
 <?php if(isset($row)) { ?>
     <?php if(!$row) { ?>
        <h1 class="alert-danger text-center">A bejelentkezés nem sikerült!</h1>

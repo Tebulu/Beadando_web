@@ -1,12 +1,10 @@
 <?php
+include('./includes/database.inc.php');
 if(isset($_POST['user_name']) && isset($_POST['password'])) {
     try {
         // Kapcsolódás
-		$user = 'atlatszonet';
-		$password = 'RJUJBHn5';
-        $dbh = new PDO('mysql:dbname=atlatszonet; host=mysql.omega:3306', $user, $password,
-                        array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
-        $dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
+		$dbh=new PDO('mysql:dbname='.$db_name.'; host='.$host.'',$user,$password,array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
+		$dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
         
         // Felhsználó keresése
         $sqlSelect = "select uid, first_name, last_name, authority from users where user_name = :user_name and password = sha1(:password)";

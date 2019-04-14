@@ -27,7 +27,7 @@
 		<!--Fejléc-->
 		<header class="header">
 			<img class="img-responsive" src="./images/<?=$header['image_source']?>" alt="<?=$header['image_alt']?>"/>
-			<?php if(isset($_SESSION['user_name'])) { ?>Bejlentkezve: <strong><?php= $_SESSION['first_name']." ".$_SESSION['last_name']." (".$_SESSION['user_name'].")" ?></strong><?php } ?>
+			<?php if(isset($_SESSION['user_name'])) { ?>Bejlentkezve: <strong><?= $_SESSION['first_name']." ".$_SESSION['last_name']." (".$_SESSION['user_name'].")" ?></strong><?php } ?>
 		</header>
 		
 		<!--Menü-->

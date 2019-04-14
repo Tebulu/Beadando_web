@@ -1,15 +1,13 @@
 <?php
 //Üzenetek kiírása
+include('./includes/database.inc.php');
 	if(!isset($_SESSION["admin"]) or $_SESSION["admin"]!=1){
 		Header("Location: .");
 	}
 	try {
         // Kapcsolódás
-		$user = 'atlatszonet';
-		$password = 'RJUJBHn5';
-        $dbh = new PDO('mysql:dbname=atlatszonet; host=mysql.omega:3306', $user, $password,
-                        array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
-        $dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
+		$dbh=new PDO('mysql:dbname='.$db_name.'; host='.$host.'',$user,$password,array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
+			$dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
 		if(isset($_POST["mid"])){
 			$mid=$_POST["mid"];
 			$dbh->query("delete from messages where mid=$mid");

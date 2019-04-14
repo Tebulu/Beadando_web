@@ -1,4 +1,5 @@
 <?php
+include('./includes/database.inc.php');
 	//szerver oldali ellenőrzés 
 	$again=false;
 	$re = '/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/';
@@ -19,10 +20,7 @@
 	if(!$again){
 		try {
 			// Kapcsolódás
-			$user = 'atlatszonet';
-			$password = 'RJUJBHn5';
-			$dbh = new PDO('mysql:dbname=atlatszonet; host=mysql.omega:3306', $user, $password,
-							array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
+			$dbh=new PDO('mysql:dbname='.$db_name.'; host='.$host.'',$user,$password,array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
 			$dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
 			$sqlInsert = "insert into messages(name,email,message)
 							  values(:name,:email,:message)";

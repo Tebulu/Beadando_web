@@ -1,13 +1,11 @@
 <?php
 //Regisztrálás
+include('./includes/database.inc.php');
 if(isset($_POST['user_name']) && isset($_POST['password']) && isset($_POST['first_name']) && isset($_POST['last_name'])&& isset($_POST['email'])) {
 //Megegyezik-e a két jelszó?
     if($_POST['password'] == $_POST["password2"]){
 		try {
-			$user = 'atlatszonet';
-			$password = 'RJUJBHn5';
-			$dbh = new PDO('mysql:dbname=atlatszonet; host=mysql.omega:3306', $user, $password,
-							array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
+			$dbh=new PDO('mysql:dbname='.$db_name.'; host='.$host.'',$user,$password,array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
 			$dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
 			// Létezik már a felhasználói név?
 			$sqlSelect = "select uid from users where user_name = :user_name";
